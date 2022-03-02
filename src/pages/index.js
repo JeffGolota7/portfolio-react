@@ -6,6 +6,7 @@ import wave from "../images/wave.png"
 import resume from "../documents/Resume - Jeff Golota.pdf"
 import triangle from "../images/triangle.png"
 import { FaGithub, FaFileDownload, FaLinkedin, FaChevronDown } from 'react-icons/fa';
+import { Helmet } from "react-helmet"
 
 
 function mobile() {
@@ -53,6 +54,11 @@ function mobile() {
 const IndexPage = () => {
   return (
     <body>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Jeff Golota - Developer & Designer</title>
+          <link rel="canonical" href="http://www.jeffgolota.com" />
+        </Helmet>
       <nav id="mobile">
         <div id="hamburger" onClick={mobile}>
           <div class="lines">
