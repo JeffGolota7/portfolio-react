@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-      title: `Jeff Golota - Developer & Designer`,
+    title: `Jeff Golota - Developer & Designer`,
     siteUrl: `https://www.jeffgolota.com/`
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
