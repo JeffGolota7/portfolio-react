@@ -12,7 +12,9 @@ class ProjectGallery extends React.Component {
   }
   render() {
     return (
-      <h1>Hello, {projects.projectList[0].name}</h1>
+      <div className="project-container">
+        
+      </div>
     );
   }
 }

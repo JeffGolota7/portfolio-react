@@ -2,7 +2,16 @@
   "projectList":
   [
     {
-      "name": "Sugar"
+      "name": "Going Up Brand Mockup",
+      "filter": "graphic design",
+      "technologies": [
+        "Illustrator",
+        "InDesign"
+      ],
+      "description": "A mockup stemming from a single logo I made from a graphic design course I took. We were tasked with creating different variations of the logo, a business card, a letterhead, an advertisement for the company, and then subsequent advertisements for Christmas, Valentine's Day, and a new product the brand would roll out.",
+      "images": [
+        "../images/going-up-brand-mockup-1.jpg"
+      ]
     }
   ]
 }

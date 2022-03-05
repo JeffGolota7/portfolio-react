@@ -5,6 +5,7 @@ import ProjectGallery from "../components/ProjectGallery.js"
 import wave from "../images/wave.png"
 import resume from "../documents/Resume - Jeff Golota.pdf"
 import triangle from "../images/triangle.png"
+import ficon from "../images/j7.svg"
 import { FaGithub, FaFileDownload, FaLinkedin, FaChevronDown } from 'react-icons/fa';
 import { Helmet } from "react-helmet"
 
@@ -58,6 +59,7 @@ const IndexPage = () => {
           <meta charSet="utf-8" />
           <title>Jeff Golota - Developer & Designer</title>
           <link rel="canonical" href="http://www.jeffgolota.com" />
+          <link rel="icon" href={ficon} sizes="any" type="image/svg+xml" />
         </Helmet>
       <nav id="mobile">
         <div id="hamburger" onClick={mobile}>
