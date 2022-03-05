@@ -140,7 +140,7 @@ const IndexPage = () => {
       <div id="projects">
         <img src={triangle} alt="polygon" class="triangle" />
         <h1 id="projects-title"><span>-</span>PROJECTS<span>-</span></h1>
-        <ProjectGallery test="test"/>
+        <ProjectGallery/>
       </div>
       <div id="about">
         <img src={wave} alt="wave" class="wave" />

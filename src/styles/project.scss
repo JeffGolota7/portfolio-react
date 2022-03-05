@@ -1,0 +1,34 @@
+.project-container {
+  background-color: white;
+  width: 10rem;
+  height: 5rem;
+  cursor: pointer;
+  background: url("../images/thumbnail-GoingUp.png") no-repeat center
+    center/cover;
+}
+.project-container::hover {
+  webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+  filter: blur(100px);
+}
+.filter-container {
+  list-style: "none";
+  display: flex;
+  .filter {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    background-color: #00ec21;
+    color: #4f5454;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 70%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .middle {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
