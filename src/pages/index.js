@@ -146,19 +146,10 @@ const IndexPage = () => {
         <div id="about-description">
           <div class="about-image-container"></div>
           <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hi, I'm Jeff Golota and I am
-            currently attending Endicott College where I am pursuing a B.S. in
-            Computer Science. I have worked with computers for most of my life due
-            to my background in computer gaming and I thought that I would major
-            in Computer Science to see how I'd enjoy coding. It has quickly
-            developed into one of my passions after I took a web development
-            course. After said course I dedicated my summer to learning as much as
-            I could about web development and I am continuing that goal in my free
-            time. I am currently trying to learn more about UI/UX design in order
-            to better my visual skills when creating websites. I take pleasure in
-            making visually appealing layouts and coding fun effects. Some of my
-            interests include video games, working out, and being with friends and
-            family.
+            I'm Jeff Golota and I am currently pursuing a B.S. in Computer Science at Endicott College, in Beverly, MA.<br></br><br></br>
+            I have been working with computer software for most of my life through computer gaming and classwork. Due to this exposure, I chose to major in Computer Science to deepen my knowledge in the subject.<br></br><br></br>
+            After completing a web development course, I realized this was my passion. I dedicated that following summer to learning as much as I could about web development and I continue to expand that knowledge in my free time. I am currently learning more about UI/UX design both on my own and through courses, which will improve my visual skills when creating websites. I take pleasure in making visually appealing layouts and coding fun effects.<br></br><br></br>
+            Some of my many interests include video games, working out, sports, and being with friends and family.
           </p>
         </div>
       </div>

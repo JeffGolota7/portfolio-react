@@ -1,7 +1,9 @@
 import * as React from "react"
+import projects from "../data/projects"
 
 class ProjectGallery extends React.Component {
   constructor(props) {
+    console.log(projects.projectList);
     super(props);
     this.state = {
         name: '',
@@ -10,7 +12,7 @@ class ProjectGallery extends React.Component {
   }
   render() {
     return (
-      <h1>Hello, {this.props.test}</h1>
+      <h1>Hello, {projects.projectList[0].name}</h1>
     );
   }
 }
