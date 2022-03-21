@@ -17,36 +17,36 @@ function mobile() {
   const mobileLinks = document.querySelector(".links");
 
   window.addEventListener("click", outsideClick);
-  if (hamburger.classList.contains("active")) {
+  if (hamburger.classNameList.contains("active")) {
     overlay.style.opacity = "0";
     overlay.style.pointerEvents = "none";
     mobileMenu.style.left = "-1000px";
     mobileLinks.style.opacity = "0";
-    hamburger.classList.remove("active");
+    hamburger.classNameList.remove("active");
   } else {
     overlay.style.opacity = "1";
     overlay.style.pointerEvents = "all";
     mobileLinks.style.opacity = "1";
     mobileMenu.style.left = "0";
-    hamburger.classList.add("active");
+    hamburger.classNameList.add("active");
   }
   mobileLinks.addEventListener("click", () => {
-    if (hamburger.classList.contains("active")) {
+    if (hamburger.classNameList.contains("active")) {
       overlay.style.opacity = "0";
       overlay.style.pointerEvents = "none";
       mobileMenu.style.left = "-1000px";
       mobileLinks.style.opacity = "0";
-      hamburger.classList.remove("active");
+      hamburger.classNameList.remove("active");
     }
   });
   function outsideClick(e) {
     if (e.target == overlay) {
-      if (hamburger.classList.contains("active")) {
+      if (hamburger.classNameList.contains("active")) {
         overlay.style.opacity = "0";
         overlay.style.pointerEvents = "none";
         mobileMenu.style.left = "-1000px";
         mobileLinks.style.opacity = "0";
-        hamburger.classList.remove("active");
+        hamburger.classNameList.remove("active");
       }
     }
   }
@@ -54,7 +54,7 @@ function mobile() {
 // markup
 const IndexPage = () => {
   return (
-    <body>
+    <div>
       <Helmet>
           <meta charSet="utf-8" />
           <title>Jeff Golota - Developer & Designer</title>
@@ -63,7 +63,7 @@ const IndexPage = () => {
         </Helmet>
       <nav id="mobile">
         <div id="hamburger" onClick={mobile}>
-          <div class="lines">
+          <div className="lines">
             <span></span>
             <span></span>
             <span></span>
@@ -72,36 +72,36 @@ const IndexPage = () => {
             <span></span>
           </div>
         </div>
-        <ul class="links">
+        <ul className="links">
           <li><a href="#landing">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="social-links-container">
+      <div className="social-links-container">
         <ul id="social-links">
           <li id="linkedin-section">
             <a href="https://www.linkedin.com/in/jeff-golota-405a00194/" target="_blank">
-              <h3 class="label" id="linkedin">LinkedIn</h3>
+              <h3 className="label" id="linkedin">LinkedIn</h3>
               <FaLinkedin style={{"fontSize": "30px"}}/>
             </a>
           </li>
           <li id="github-section">
             <a href="https://github.com/JeffGolota7/" target="_blank">
-              <h3 class="label" id="github">GitHub</h3>
+              <h3 className="label" id="github">GitHub</h3>
               <FaGithub style={{"fontSize": "30px"}}/>
             </a>
           </li>
           <li id="resume-section">
             <a href={resume} download>
-              <h3 class="label" id="resume">Resume</h3>
+              <h3 className="label" id="resume">Resume</h3>
               <FaFileDownload style={{"fontSize": "30px"}}/>
             </a>
           </li>
         </ul>
       </div>
-      <div class="overlay"></div>
+      <div className="overlay"></div>
 
       <div id="landing">
         <div id="landing-content">
@@ -109,9 +109,9 @@ const IndexPage = () => {
             <svg id="landing-logo" x="0px" y="0px" viewBox="0 0 23.75 18.47">
               <g id="logo">
                 <g id="logo">
-                  <polygon class="green" style={{"fill": "#00ec18"}} points="3.41 0 3.41 4.51 11.87 4.51 9.46 13.41 15.17 10.22 17.81 0 3.41 0" />
-                  <polygon class="grey" style={{"fill": "#515151"}} points="18.25 0 17.04 4.51 23.75 4.51 23.75 0 18.25 0" />
-                  <polygon class="grey" style={{"fill": "#515151"}} points="14.95 10.77 13.41 16.93 10.55 18.47 0 18.47 4.51 14.07 9.35 14.07 14.95 10.77" />
+                  <polygon className="green" style={{"fill": "#00ec18"}} points="3.41 0 3.41 4.51 11.87 4.51 9.46 13.41 15.17 10.22 17.81 0 3.41 0" />
+                  <polygon className="grey" style={{"fill": "#515151"}} points="18.25 0 17.04 4.51 23.75 4.51 23.75 0 18.25 0" />
+                  <polygon className="grey" style={{"fill": "#515151"}} points="14.95 10.77 13.41 16.93 10.55 18.47 0 18.47 4.51 14.07 9.35 14.07 14.95 10.77" />
                 </g>
               </g>
             </svg>
@@ -135,18 +135,18 @@ const IndexPage = () => {
       </div>
       <div id="scroll">
         <h3>scroll down</h3>
-        <span class="bounce"><FaChevronDown /></span>
+        <span className="bounce"><FaChevronDown /></span>
       </div>
       <div id="projects">
-        <img src={triangle} alt="polygon" class="triangle" />
+        <img src={triangle} alt="polygon" className="triangle" />
         <h1 id="projects-title"><span>-</span>PROJECTS<span>-</span></h1>
         <ProjectGallery/>
       </div>
       <div id="about">
-        <img src={wave} alt="wave" class="wave" />
+        <img src={wave} alt="wave" className="wave" />
         <h1 id="about-title"><span>-</span>ABOUT<span>-</span></h1>
         <div id="about-description">
-          <div class="about-image-container"></div>
+          <div className="about-image-container"></div>
           <p>
             I'm Jeff Golota and I am currently pursuing a B.S. in Computer Science at Endicott College, in Beverly, MA.<br></br><br></br>
             I have been working with computer software for most of my life through computer gaming and classwork. Due to this exposure, I chose to major in Computer Science to deepen my knowledge in the subject.<br></br><br></br>
@@ -156,19 +156,19 @@ const IndexPage = () => {
         </div>
       </div>
       <div id="contact">
-        <form class="contact-form" action="POST" data-netlify="true">
-          <h1 class="contact-title"><span>-</span>CONTACT ME<span>-</span></h1>
-          <div class="contact-input">
-            <div class="name">
-              <label class="label" for="name">Name</label>
+        <form className="contact-form" action="POST" data-netlify="true">
+          <h1 className="contact-title"><span>-</span>CONTACT ME<span>-</span></h1>
+          <div className="contact-input">
+            <div className="name">
+              <label className="label" for="name">Name</label>
               <input type="text" name="name" id="name" placeholder="Enter Name Here" />
             </div>
-            <div class="email">
-              <label class="label" for="email">Email</label>
+            <div className="email">
+              <label className="label" for="email">Email</label>
               <input type="text" name="email" id="email" placeholder="Enter Email Here" />
             </div>
-            <div class="message">
-              <label class="label" for="message">Message</label>
+            <div className="message">
+              <label className="label" for="message">Message</label>
               <textarea type="text" name="message" id="message" placeholder="Enter Message Here"></textarea>
             </div>
             <div>
@@ -178,7 +178,7 @@ const IndexPage = () => {
           </div>
         </form>
       </div>
-    </body>
+    </div>
   )
 }
 

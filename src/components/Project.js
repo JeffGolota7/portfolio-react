@@ -3,7 +3,7 @@ import "../styles/project.scss"
 import "../styles/style.css"
 
 class Project extends React.Component {
-
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -14,9 +14,12 @@ class Project extends React.Component {
   render() {
     return (
       <>
-        <div className="modal"></div>
-        <div className="project-container" >
+        <div className="project">
+          <div className="project-container goingup" >
+            
 
+          </div>
+          <h1 className="project-title">{this.props.projectData.name}</h1>
         </div>
       </>
     );

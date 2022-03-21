@@ -1,15 +1,54 @@
-.project-container {
-  background-color: white;
-  width: 10rem;
-  height: 5rem;
-  cursor: pointer;
+.goingup {
   background: url("../images/thumbnail-GoingUp.png") no-repeat center
     center/cover;
 }
-.project-container::hover {
-  webkit-filter: blur(4px); /* Chrome, Safari, Opera */
-  filter: blur(100px);
+.projects-wrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10%;
 }
+.modal-wrapper {
+  width: 10rem;
+  height: 5rem;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 90vh;
+  margin-left: -40vw;
+  border-radius: 5px;
+  margin-top: -45vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #252525;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .project-title {
+    font-size: 0.7rem;
+    color: #fff;
+    margin-top: 5%;
+  }
+  .project-container {
+    background-color: white;
+    width: 10rem;
+    height: 5rem;
+  }
+}
+
 .filter-container {
   list-style: "none";
   display: flex;

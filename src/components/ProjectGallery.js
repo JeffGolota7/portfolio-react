@@ -1,6 +1,7 @@
 import * as React from "react"
 import projects from "../data/projects"
 import Project from "../components/Project.js"
+import Modal from "../components/Modal.js"
 import "../styles/style.css"
 import "../styles/project.scss"
 
@@ -9,8 +10,8 @@ class ProjectGallery extends React.Component {
     
     super(props);
     this.state = {
-        currentFilter: "none",
-        appVersion: ''
+        showing: false,
+        modalProject: '',
     }
     
   }
@@ -23,7 +24,18 @@ class ProjectGallery extends React.Component {
           <li className="filter">Development</li>
           
         </ul>
-        <Project projectData={projects.projectList[0]}/>
+        <div
+          className="modal-wrapper"
+        >
+          { this.state.showing ? <Modal projectData={this.state.modalProject} setState={this.setState()}/> : null }
+        </div>
+        <div className="projects-wrapper">
+          <div onClick={() => {
+            this.setState({ showing: true, modalProject: projects.projectList[0] })
+          }}>
+            <Project projectData={projects.projectList[0]}/>
+          </div>
+        </div>
       </>
     );
   }
