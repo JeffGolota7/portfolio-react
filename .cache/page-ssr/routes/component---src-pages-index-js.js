@@ -41,25 +41,70 @@ __webpack_require__.r(__webpack_exports__);
 class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
-    this.imageSrc = __webpack_require__("./src/components sync recursive")(this.props.projectData.images[0]);
     this.state = {
-      name: '',
-      appVersion: ''
+      currentImage: this.props.projectData.images[0],
+      currentIndex: 0
     };
+    console.log(this.state.currentImage);
+    console.log(this.state.currentIndex);
   }
 
   render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "modal"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "close",
+      onClick: () => {
+        this.props.onCloseModal();
+      },
       style: {
-        color: "#fff"
+        color: "#fff",
+        cursor: "pointer"
       }
-    }, "X"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+    }, "X"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "image-gallery"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "back",
+      onClick: () => {
+        console.log(this.state.currentIndex);
+
+        if (this.state.currentIndex >= 0) {
+          this.setState({
+            currentIndex: this.state.currentIndex--
+          });
+          document.querySelector(".image").classList.remove(this.state.currentImage);
+          console.log("ClassList after removal: " + document.querySelector(".image").classList);
+          this.setState({
+            currentImage: this.props.projectData.images[this.state.currentIndex]
+          });
+          document.querySelector(".image").classList.add(this.state.currentImage);
+          console.log("ClassList after adding: " + document.querySelector(".image").classList);
+        }
+      }
+    }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      className: "image goingup0"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "next",
+      onClick: () => {
+        if (this.state.currentIndex !== this.props.projectData.images.length - 1) {
+          this.setState({
+            currentIndex: this.state.currentIndex++
+          });
+          document.querySelector(".image").classList.remove(this.state.currentImage);
+          this.setState({
+            currentImage: this.props.projectData.images[this.state.currentIndex]
+          });
+          document.querySelector(".image").classList.add(this.state.currentImage);
+          console.log(this.state.currentIndex);
+        }
+      }
+    }, ">")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "project-info"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "project-title"
     }, this.props.projectData.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
       className: "description"
-    }, this.props.projectData.description)));
+    }, this.props.projectData.description))));
   }
 
 }
@@ -102,7 +147,7 @@ class Project extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "project"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "project-container goingup"
+      className: "project-container goingup0"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "project-title"
     }, this.props.projectData.name)));
@@ -144,6 +189,19 @@ __webpack_require__.r(__webpack_exports__);
 class ProjectGallery extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
+
+    this.handleOpenModal = () => {
+      this.setState({
+        showing: true
+      });
+    };
+
+    this.handleCloseModal = () => {
+      this.setState({
+        showing: false
+      });
+    };
+
     this.state = {
       showing: false,
       modalProject: ''
@@ -162,7 +220,8 @@ class ProjectGallery extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     }, "Development")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "modal-wrapper"
     }, this.state.showing ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Modal_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      projectData: this.state.modalProject
+      projectData: this.state.modalProject,
+      onCloseModal: this.handleCloseModal
     }) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "projects-wrapper"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -7285,24 +7344,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components sync recursive":
-/*!******************************!*\
-  !*** ./src/components/ sync ***!
-  \******************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./src/components sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
 /***/ "./src/data/projects.json":
 /*!********************************!*\
   !*** ./src/data/projects.json ***!
@@ -7310,7 +7351,7 @@ module.exports = webpackEmptyContext;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"projectList":[{"name":"Going Up Brand Mockup","filter":"design","technologies":["Illustrator","InDesign"],"description":"A mockup stemming from a single logo I made from a graphic design course I took. We were tasked with creating different variations of the logo, a business card, a letterhead, an advertisement for the company, and then subsequent advertisements for Christmas, Valentine\'s Day, and a new product the brand would roll out.","images":["../images/thumbnail-GoingUp.png"]}]}');
+module.exports = JSON.parse('{"projectList":[{"name":"Going Up Brand Mockup","filter":"design","technologies":["Illustrator","InDesign"],"description":"A mockup stemming from a single logo I made from a graphic design course I took. We were tasked with creating different variations of the logo, a business card, a letterhead, an advertisement for the company, and then subsequent advertisements for Christmas, Valentine\'s Day, and a new product the brand would roll out.","images":["goingup0","goingup1"]}]}');
 
 /***/ })
 

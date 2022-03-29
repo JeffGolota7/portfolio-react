@@ -7,18 +7,46 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        name: '',
-        appVersion: ''
+        currentImage: this.props.projectData.images[0],
+        currentIndex: 0
     }
+    console.log(this.state.currentImage);
+    console.log(this.state.currentIndex);
   }
   render() {
     return (
       <>
           <div className="modal">
-            {/* <img src={this.imageSrc} alt=""/> */}
-            <h1 onClick={() => {this.props.setState.setState({showing: false})}}style={{color: "#fff"}}>X</h1>
-            <h1 className="project-title">{this.props.projectData.name}</h1>
-            <p className="description">{this.props.projectData.description}</p>
+            <h1 className="close" onClick={() => {this.props.onCloseModal()}} style={{color: "#fff", cursor: "pointer"}}>X</h1>
+            <div className="image-gallery">
+              <h1 className="back" onClick={() => {
+                
+                console.log(this.state.currentIndex);
+                if (this.state.currentIndex >= 0) {
+                  console.log(document.querySelector(".image").classList);
+                  document.querySelector(".image").classList.remove(this.state.currentImage);
+                  this.setState({currentIndex: this.state.currentIndex--});
+                  this.setState({currentImage: this.props.projectData.images[this.state.currentIndex]})
+                  document.querySelector(".image").classList.add(this.state.currentImage);
+                  console.log(document.querySelector(".image").classList);
+                }
+              }}>&lt;</h1>
+              <img className="image goingup0"></img>
+              <h1 className="next" onClick={() => {
+                if (this.state.currentIndex !== this.props.projectData.images.length - 1) {
+                  console.log(document.querySelector(".image").classList);
+                  document.querySelector(".image").classList.remove(this.state.currentImage);
+                  this.setState({currentIndex: this.state.currentIndex++});
+                  this.setState({currentImage: this.props.projectData.images[this.state.currentIndex]})
+                  document.querySelector(".image").classList.add(this.state.currentImage);
+                  console.log(document.querySelector(".image").classList);
+                }
+              }}>&gt;</h1>
+            </div>
+            <div className="project-info">
+              <h1 className="project-title">{this.props.projectData.name}</h1>
+              <p className="description">{this.props.projectData.description}</p>
+            </div>
           </div>
       </>
     );

@@ -15,6 +15,13 @@ class ProjectGallery extends React.Component {
     }
     
   }
+  handleOpenModal = () => {
+    this.setState({ showing: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ showing: false });
+  };
   render() {
     return (
       <>
@@ -27,7 +34,7 @@ class ProjectGallery extends React.Component {
         <div
           className="modal-wrapper"
         >
-          { this.state.showing ? <Modal projectData={this.state.modalProject} setState={this.setState()}/> : null }
+          { this.state.showing ? <Modal projectData={this.state.modalProject} onCloseModal={this.handleCloseModal}/> : null }
         </div>
         <div className="projects-wrapper">
           <div onClick={() => {
