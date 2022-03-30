@@ -656,7 +656,7 @@ body {
 
 @media screen and (max-width: 1125px) {
   #mobile {
-    width: 100vw;
+    width: 80vw;
   }
 }
 
