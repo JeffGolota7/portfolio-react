@@ -66,19 +66,24 @@ class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "back",
       onClick: () => {
-        console.log(this.state.currentIndex);
+        console.log("Current Index On Click: " + this.state.currentIndex);
 
         if (this.state.currentIndex >= 0) {
+          console.log("ClassList Before Change: " + document.querySelector(".image").classList);
+          console.log("Current Image before removal: " + this.state.currentImage);
+          document.querySelector(".image").classList.remove(this.state.currentImage);
+          console.log("ClassList After Removal: " + document.querySelector(".image").classList);
           this.setState({
             currentIndex: this.state.currentIndex--
           });
-          document.querySelector(".image").classList.remove(this.state.currentImage);
-          console.log("ClassList after removal: " + document.querySelector(".image").classList);
           this.setState({
             currentImage: this.props.projectData.images[this.state.currentIndex]
+          }, () => {
+            document.querySelector(".image").classList.add(this.state.currentImage);
           });
-          document.querySelector(".image").classList.add(this.state.currentImage);
-          console.log("ClassList after adding: " + document.querySelector(".image").classList);
+          console.log("Current Index After Change :" + this.state.currentIndex);
+          console.log("Current Image After Change :" + this.state.currentImage);
+          console.log("ClassList After Adding New Image: " + document.querySelector(".image").classList);
         }
       }
     }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -87,16 +92,18 @@ class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       className: "next",
       onClick: () => {
         if (this.state.currentIndex !== this.props.projectData.images.length - 1) {
+          document.querySelector(".image").classList.remove(this.state.currentImage);
           this.setState({
             currentIndex: this.state.currentIndex++
           });
-          document.querySelector(".image").classList.remove(this.state.currentImage);
           this.setState({
             currentImage: this.props.projectData.images[this.state.currentIndex]
+          }, () => {
+            document.querySelector(".image").classList.add(this.state.currentImage);
           });
-          document.querySelector(".image").classList.add(this.state.currentImage);
-          console.log(this.state.currentIndex);
         }
+
+        console.log(this.state.currentIndex);
       }
     }, ">")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "project-info"

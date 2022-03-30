@@ -15,7 +15,7 @@ class Project extends React.Component {
     return (
       <>
         <div className="project">
-          <div className="project-container goingup0" >
+          <div className="project-container goingup-thumbnail" >
             
 
           </div>
