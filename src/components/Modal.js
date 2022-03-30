@@ -1,6 +1,7 @@
 import * as React from "react"
 import "../styles/project.scss"
 import "../styles/style.css"
+import "../styles/images.scss"
 
 class Modal extends React.Component {
   
@@ -14,7 +15,6 @@ class Modal extends React.Component {
     console.log(this.state.currentIndex);
   }
   render() {
-    console.log("Index on Render: " + this.state.currentIndex);
     return (
       <>
           <div className="modal">

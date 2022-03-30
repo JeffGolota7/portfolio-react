@@ -34,6 +34,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_project_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_project_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/style.css */ "./src/styles/style.css");
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_images_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/images.scss */ "./src/styles/images.scss");
+/* harmony import */ var _styles_images_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_images_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -50,6 +53,7 @@ class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   }
 
   render() {
+    console.log("Index on Render: " + this.state.currentIndex);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "modal"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -66,24 +70,17 @@ class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "back",
       onClick: () => {
-        console.log("Current Index On Click: " + this.state.currentIndex);
-
-        if (this.state.currentIndex >= 0) {
-          console.log("ClassList Before Change: " + document.querySelector(".image").classList);
-          console.log("Current Image before removal: " + this.state.currentImage);
+        if (this.state.currentIndex > 0) {
           document.querySelector(".image").classList.remove(this.state.currentImage);
-          console.log("ClassList After Removal: " + document.querySelector(".image").classList);
           this.setState({
-            currentIndex: this.state.currentIndex--
-          });
-          this.setState({
-            currentImage: this.props.projectData.images[this.state.currentIndex]
+            currentIndex: this.state.currentIndex - 1
           }, () => {
-            document.querySelector(".image").classList.add(this.state.currentImage);
+            this.setState({
+              currentImage: this.props.projectData.images[this.state.currentIndex]
+            }, () => {
+              document.querySelector(".image").classList.add(this.state.currentImage);
+            });
           });
-          console.log("Current Index After Change :" + this.state.currentIndex);
-          console.log("Current Image After Change :" + this.state.currentImage);
-          console.log("ClassList After Adding New Image: " + document.querySelector(".image").classList);
         }
       }
     }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -94,16 +91,15 @@ class Modal extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         if (this.state.currentIndex !== this.props.projectData.images.length - 1) {
           document.querySelector(".image").classList.remove(this.state.currentImage);
           this.setState({
-            currentIndex: this.state.currentIndex++
-          });
-          this.setState({
-            currentImage: this.props.projectData.images[this.state.currentIndex]
+            currentIndex: this.state.currentIndex + 1
           }, () => {
-            document.querySelector(".image").classList.add(this.state.currentImage);
+            this.setState({
+              currentImage: this.props.projectData.images[this.state.currentIndex]
+            }, () => {
+              document.querySelector(".image").classList.add(this.state.currentImage);
+            });
           });
         }
-
-        console.log(this.state.currentIndex);
       }
     }, ">")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "project-info"
@@ -154,7 +150,7 @@ class Project extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "project"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "project-container goingup0"
+      className: "project-container goingup-thumbnail"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "project-title"
     }, this.props.projectData.name)));
@@ -520,6 +516,16 @@ const IndexPage = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./src/styles/images.scss":
+/*!********************************!*\
+  !*** ./src/styles/images.scss ***!
+  \********************************/
+/***/ (() => {
+
+
 
 /***/ }),
 
@@ -7358,7 +7364,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"projectList":[{"name":"Going Up Brand Mockup","filter":"design","technologies":["Illustrator","InDesign"],"description":"A mockup stemming from a single logo I made from a graphic design course I took. We were tasked with creating different variations of the logo, a business card, a letterhead, an advertisement for the company, and then subsequent advertisements for Christmas, Valentine\'s Day, and a new product the brand would roll out.","images":["goingup0","goingup1"]}]}');
+module.exports = JSON.parse('{"projectList":[{"name":"Going Up Brand Mockup","filter":"design","technologies":["Illustrator","InDesign"],"description":"A mockup stemming from a single logo I made from a graphic design course I took. We were tasked with creating different variations of the logo, a business card, a letterhead, an advertisement for the company, and then subsequent advertisements for Christmas, Valentine\'s Day, and a new product the brand would roll out. The designs were made using Adobe Illustrator and Adobe InDesign.","images":["goingup0","goingup1","goingup2","goingup3","goingup4","goingup5","goingup6"]}]}');
 
 /***/ })
 

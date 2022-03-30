@@ -1,19 +1,8 @@
-.goingup0 {
-  content: url("../images/thumbnail-GoingUp.png");
-  max-width: 763px;
-  width: 100%;
-  height: 100%;
-}
 .goingup-thumbnail {
   background: url("../images/thumbnail-GoingUp.png") no-repeat center
     center/cover;
 }
-.goingup1 {
-  content: url("../images/GoingUp2.png");
-  width: 100%;
-  max-width: 700px;
-  height: 100%;
-}
+
 .projects-wrapper {
   width: 100%;
   display: grid;
@@ -31,7 +20,7 @@
   justify-content: center;
   align-items: center;
   width: 90%;
-  height: 70%;
+  height: 60%;
   margin: 0;
   .back,
   .next {
@@ -65,7 +54,7 @@
   flex-direction: column;
   padding: 2rem;
   .image {
-    margin-top: 5%;
+    margin-top: 10%;
   }
   .close {
     position: absolute;
