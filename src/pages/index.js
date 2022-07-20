@@ -60,16 +60,15 @@ const IndexPage = () => {
           <title>Jeff Golota - Developer & Designer</title>
           <link rel="canonical" href="http://www.jeffgolota.com" />
           <link rel="icon" href={ficon} sizes="any" type="image/svg+xml" />
-          <!-- Global site tag (gtag.js) - Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW0MYT4KL3"></script>
           <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(){dataLayer.push(arguments)}
             gtag('js', new Date());
 
             gtag('config', 'G-BW0MYT4KL3');
           </script>
-        </Helmet>
+      </Helmet>
       <nav id="mobile">
         <div id="hamburger" onClick={mobile}>
           <div className="lines">
