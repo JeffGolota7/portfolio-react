@@ -62,8 +62,8 @@ const IndexPage = () => {
           <link rel="icon" href={ficon} sizes="any" type="image/svg+xml" />
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW0MYT4KL3"></script>
           <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments)}
+            dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
             gtag('js', new Date());
 
             gtag('config', 'G-BW0MYT4KL3');
