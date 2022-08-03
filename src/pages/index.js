@@ -60,18 +60,6 @@ const IndexPage = () => {
           <title>Jeff Golota - Developer & Designer</title>
           <link rel="canonical" href="http://www.jeffgolota.com" />
           <link rel="icon" href={ficon} sizes="any" type="image/svg+xml" />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW0MYT4KL3"></script>
-          <!-- Google tag (gtag.js) -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ6KN3B6QD"></script>
-          <script>
-            window.dataLayer = window.dataLayer || []
-            function gtag() {
-              dataLayer.push(arguments)
-            }
-            gtag('js', new Date())
-
-            gtag('config', 'G-PZ6KN3B6QD')
-          </script>
       </Helmet>
       <nav id="mobile">
         <div id="hamburger" onClick={mobile}>
