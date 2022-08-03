@@ -16,8 +16,13 @@ module.exports = {
     resolve: `gatsby-plugin-google-gtag`,
     options: {
       trackingIds: [
-      "G-PZ6KN3B6QD", // Google Analytics / GA
+        "G-PZ6KN3B6QD", // Google Analytics / GA
       ],
+      gtagConfig: {
+        optimize_id: "OPT_CONTAINER_ID",
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
       pluginConfig: {
         // Puts tracking script in the head instead of the body
         head: true
