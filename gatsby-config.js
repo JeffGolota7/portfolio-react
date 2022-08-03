@@ -11,5 +11,17 @@ module.exports = {
       "path": "./src/images/"
     },
     __key: "images"
+  },
+  {
+    resolve: `gatsby-plugin-google-gtag`,
+    options: {
+      trackingIds: [
+      "G-PZ6KN3B6QD", // Google Analytics / GA
+      ],
+      pluginConfig: {
+        // Puts tracking script in the head instead of the body
+        head: true
+      },
+    },
   }]
 };
